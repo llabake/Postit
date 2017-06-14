@@ -22,9 +22,9 @@ app.use('/api/Group//groupid/user',groupRouter);
 app.use('/api/Group//groupid/message',groupRouter);
 
 app.get('/', function(req, res){
-    res.send('Welcome to Postit');
+    res.json({message:'Welcome to Postit'});
 });
 
-app.listen(port,function(){
+app.listen(port,() => {
     console.log(`Server running on port ${port}`)
 });

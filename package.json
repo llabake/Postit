@@ -18,6 +18,7 @@
   "homepage": "https://github.com/llabake/Postit#readme",
   "dependencies": {
     "babel": "^6.23.0",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "eslint": "^4.0.0",
     "express": "^4.15.3",

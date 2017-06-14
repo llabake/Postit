@@ -6,9 +6,9 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        Message.belongsTo(models.User, { foreignKey:'id',
-        as :'messageid'})
-        Message.belongsTo(models.Group)
+        Message.belongsToMany(models.User, { through: "messageuser", foreignKey:'id',
+        as :'userid'})
+        Message.belongsToMany(models.Group, { through: "messagegroup", foreignKey:'groupid'})
       }
     }
   });

@@ -6,10 +6,10 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        Group.hasMany(models.Message)
+        Group.hasMany(models.Message,{through:MessageGroup})
         Group.belongsToMany(User, {through: 'UserGroup', 
           foreignKey:'id', 
-          as: 'userId'})
+          as: 'groupId'})
       }
     }
   });
