@@ -1,27 +1,30 @@
-const express = require('express');
+const express = require('express'),
+    sequelize = require('sequelize'),
+    bodyParse =require ('body-parser');
+
+const User = require('./models/user.js') 
 const app = express();
-const nodemon = require('nodemon')
-const port = process.env.PORT || 3000; //use set PORT else use 3000.
+
+const port = process.env.PORT || 3000;
+
+app.use(bodyParse.urlencoded({extended:true}));
+app.use(bodyParse.Json());
+
+userRouter = require('./Routes/userRoutes')();
+
+app.use('/api/User/signup',userRouter); 
+app.use('/api/User/signin',userRouter);
 
 
-app.get('/', function(req,res){
-    res.send("Welcome to my messaging app")
+app.use('/api/Group',groupRouter);
+app.use('/api/Group/groupid/user',groupRouter);
+app.use('/api/Group//groupid/user',groupRouter);
+app.use('/api/Group//groupid/message',groupRouter);
+
+app.get('/', function(req, res){
+    res.send('Welcome to Postit');
 });
-app.get('/user', function(req,res){
-    res.send("you got to the user")
-})
-app.get('/group', function(req,res){
-    res.send("you got to the group")
-})
 
-app.get('/messages', function(req,res){
-    res.send("you got to the your messages")
-})
-
-app.get('/user/:user_id', function(req, res) {
-    let id= req.params.id
-  res.send('user ' + req.params.id);
+app.listen(port,function(){
+    console.log(`Server running on port ${port}`)
 });
-app.listen(3000, function(err){
-    console.log(`Server running on port ${port}`);
-})
