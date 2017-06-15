@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = function () {
 const groupRoute = express.Router();
-const group = require('../models').group;
+const group = require('./models').group;
 // create the group, use midlleware for the :groupid then do methods  find one for the differnt verbs check for error or return the verb action  in the api route
 
 
@@ -16,7 +16,7 @@ module.exports = {
             groupname: req.body.groupname,
         })
     }
-  groupRouter.use('/:groupid',function(res,req,next){  //midlleware
+  groupRouter.use('/:groupid',function(res,req,next){
   if(err){
     res.status(500).send(err);
   }
