@@ -4,9 +4,9 @@ module.exports = function(sequelize, DataTypes) {
     groupName: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
         // associations can be defined here
-        Group.hasMany(models.Message,{through:MessageGroup})
+        Group.hasMany(models.Message,{through:'MessageGroup'})
         Group.belongsToMany(User, {through: 'UserGroup', 
           foreignKey:'id', 
           as: 'groupId'})

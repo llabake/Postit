@@ -1,15 +1,73 @@
-const Todo = require('../models').Group;
+const express = require('express');
+const routes = function () {
+const groupRoute = express.Router();
+const group = require('../models').group;
+// create the group, use midlleware for the :groupid then do methods  find one for the differnt verbs check for error or return the verb action  in the api route
+
 
 module.exports = {
-  create(req, res) {
-    return Group
-      .create({
-        groupname: req.body.groupname,
-      })
-      .then(group => res.status(201).send(todo))
-      .catch(error => res.status(400).send(error));
+    create(req, res) {
+        if(!req.body.groupname ){
+         res.json({message:"groupname is required"})
+        }
+        else
+        {
+            group.create({
+            groupname: req.body.groupname,
+        })
+    }
+  groupRouter.use('/:groupid',function(res,req,next){  //midlleware
+  if(err){
+    res.status(500).send(err);
+  }
+  else if (group){
+    req.group = group;
+    next();
+  }
+    else
+  {
+    res.status(404).send('not found')
+  }
+
   },
-};
+  findOne(req, res)  {
+    group.findOne({
+      username: req.body.username,
+      password: req.body.password, function (err,user){
+        if(err)
+        {
+            res.status(500).send(err)
+        }
+        else
+        {
+            req.user.username = req.body.username;
+            req.user.password = req.body.password;
+            user.save();
+
+        }
+      }
+    })
+  }
+    .then(user => res.status(201).json(user))
+  }
+  return group;
+}
+
+ 
+
+  .put(function(req,res){
+    User.findById(req.param.userid, function (err, user) {
+      if (err)
+      {
+        res.status(500).send(err);
+      }
+      else{
+        req.user.username = req.body.username;
+        user.save();
+        res.json(user)
+      }
+    });
+  })
 
 
 
@@ -31,12 +89,12 @@ userRouter.route('/')
         });
   });
   //middleware
-userRouter.use('/:userid',function(res,req,next){
+groupRouter.use('/:groupid',function(res,req,next){
   if(err){
     res.status(500).send(err);
   }
-  else if (user){
-    req.user = user;
+  else if (group){
+    req.group = group;
     next();
   }
     else
@@ -44,16 +102,9 @@ userRouter.use('/:userid',function(res,req,next){
     res.status(404).send('not found')
   }
 })
-userRouter.route('/:userid')
+groupRouter.route('/:groupid')
   .get(function (req, res) {
-    res.json(req.user);
-
-//            User.findById(req.param.userid, function (err, user) {
-//                if (err)
-//                {res.status(500).send(err);}
-//                else
-//                    res.json(user)
-//            });
+    res.json(req.group);
 
   });
   .put(function(req,res){

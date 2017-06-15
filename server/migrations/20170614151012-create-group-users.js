@@ -21,7 +21,8 @@ module.exports = {
       }
     });
   },
-  down: function(queryInterface, Sequelize) {
+  down: (queryInterface /*, Sequelize*/) => {
     return queryInterface.dropTable('groupUsers');
   }
 };
+
