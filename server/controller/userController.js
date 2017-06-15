@@ -27,12 +27,13 @@ const routes = function () {
           email: req.body.email,
           password: req.body.password
         })
-        res.status(201).send("Your account has been created")
+        .then(User =>res.status(201).send("Your account has been created") )
+        .catch(error => res.status(400).send(error));
       }
-    }
-  },
-  findOne(req, res) {
-    user.findOne({
+    },
+    
+    findOne(req, res){
+      user.findOne({
       username: req.body.username,
       password: req.body.password, function (err,user){
         if(err)
@@ -47,11 +48,9 @@ const routes = function () {
         }
       }
     })
-  }
   .then(user => res.status(201).json(user))
+  .catch(error => res.status(400).send(error));
 
     return user;
 }
-    
 
- 
