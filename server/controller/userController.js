@@ -1,8 +1,9 @@
 const express = require('express');
 
-const routes = function () {
-  const userRouter = express.Router();
-  const User = require('../models').user;
+// const routes = function () {
+// //   const userRouter = express.Router();
+const User = require('../models/user').User;
+
 
 
 
@@ -10,6 +11,12 @@ const routes = function () {
     create(req, res) {
       if(!req.body.username ){
         res.json({message:"username is required"})
+      }
+      else if (!req.body.firstName ){
+        res.json({message:"First name is required"})
+      }
+      else if (!req.body.lastname ){
+        res.json({message:"Last name is required"})
       }
       else if (!req.body.email ){
         res.json({message:"Email is required"})
@@ -29,9 +36,8 @@ const routes = function () {
         })
         res.status(201).send("Your account has been created")
       }
-    }
-  },
-  findOne(req, res) {
+    },
+  findUser  ( req, res) {
     user.findOne({
       username: req.body.username,
       password: req.body.password, function (err,user){
@@ -47,11 +53,9 @@ const routes = function () {
         }
       }
     })
+    .then(user => res.status(201).json(user))
+    return User;
   }
-  .then(user => res.status(201).json(user))
-
-    return user;
 }
-    
-
+  
  

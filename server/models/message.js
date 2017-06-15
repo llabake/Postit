@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     messageText: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
         // associations can be defined here
         Message.belongsToMany(models.User, { through: "messageuser", foreignKey:'id',
         as :'userid'})

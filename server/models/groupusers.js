@@ -1,11 +1,11 @@
 'use strict';
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes)=> {
   var groupUsers = sequelize.define('groupUsers', {
     groupId: DataTypes.INTEGER,
     userID: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
       Group.hasMany(models.Message, {through:"MessageGroup", foreignKey:"id",as:"messageid"});
       Group.belongsToMany(User, {through: 'UserGroup',
       foreignKey:'id', as: "groupId"}) 

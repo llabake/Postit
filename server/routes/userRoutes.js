@@ -1,4 +1,4 @@
-const userController = require('../controllers').user;
+const userController = require('../controller/userController');
 
 module.exports = (app) => {
   app.get('/api/user', (req, res) => res.status(200).send({
@@ -6,19 +6,7 @@ module.exports = (app) => {
   }));
 
   app.post('/api/user/signup', userController.create);
-  app.get('/api/user/signin', userController.findOne);
+  app.get('/api/user/signin', userController.findUser);
   
-}
-
-
-    userRouter.route('/user/signup')
-        .post(function (req, res){
-            
-
-    userRouter.route('/user/signin')
-
-        .get(function (req,res){
-
-
 }
 

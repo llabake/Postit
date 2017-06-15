@@ -1,9 +1,9 @@
 'use strict';
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) =>{
   var User = sequelize.define('User', {
     username: DataTypes.STRING,
-    email: { DataTypes.STRING, allowNull: false, validate:{isEmail: true}},
-    password:{ DataTypes.STRING, allowNull:false},
+    email: { type:DataTypes.STRING, allowNull: false, validate:{isEmail: true}},
+    password:{ type:DataTypes.STRING, allowNull:false},
     lastLogin: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
