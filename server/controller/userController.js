@@ -29,7 +29,7 @@ const User = require('../models/user').User;
       }
       else
       {
-        user.create({
+        User.create({
           username: req.body.username,
           email: req.body.email,
           password: req.body.password
