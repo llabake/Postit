@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = function () {
 const groupRoute = express.Router();
-const group = require('../models').group;
+const Group = require('../models/group').Group;
 // create the group, use midlleware for the :groupid then do methods  find one for the differnt verbs check for error or return the verb action  in the api route
 
 
@@ -15,6 +15,8 @@ module.exports = {
             group.create({
             groupname: req.body.groupname,
         })
+        .then(user => res.status(201).json(user))
+        .catch(error => res.status(400).send(error));
     }
   groupRouter.use('/:groupid',function(res,req,next){  //midlleware
   if(err){
@@ -30,31 +32,6 @@ module.exports = {
   }
 
   },
-  findOne(req, res)  {
-    group.findOne({
-      username: req.body.username,
-      password: req.body.password, function (err,user){
-        if(err)
-        {
-            res.status(500).send(err)
-        }
-        else
-        {
-            req.user.username = req.body.username;
-            req.user.password = req.body.password;
-            user.save();
-
-        }
-      }
-    })
-  }
-    .then(user => res.status(201).json(user))
-  }
-  return group;
-}
-
- 
-
   .put(function(req,res){
     User.findById(req.param.userid, function (err, user) {
       if (err)

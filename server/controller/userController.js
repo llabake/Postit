@@ -34,7 +34,8 @@ const User = require('../models/user').User;
           email: req.body.email,
           password: req.body.password
         })
-        res.status(201).send("Your account has been created")
+        .then(res.status(201).send("Your account has been created"))
+        .catch(error => res.status(400).send(error));
       }
     },
   findUser  ( req, res) {
@@ -54,7 +55,7 @@ const User = require('../models/user').User;
       }
     })
     .then(user => res.status(201).json(user))
-    return User;
+    .catch(error => res.status(400).send(error));
   }
 }
   
