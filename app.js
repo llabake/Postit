@@ -28,9 +28,9 @@ app.get('/', function(req, res){
     res.json({message:'Welcome to Postit'});
 });
 
-// app.get('/users', function(req, res){
-//     res.json({message:'Welcome to Postit. You should signup to enjoy this environment'});
-// });
+app.get('/users', function(req, res){
+    res.json({message:'Welcome to Postit. You should signup to enjoy this environment'});
+});
 
 app.listen(port,() => {
     console.log(`Server running on port ${port}`)
