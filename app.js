@@ -2,16 +2,17 @@ const express = require('express'),
     sequelize = require('sequelize'),
     bodyParser =require ('body-parser');
 
-const User = require('./models/User.js');
+// const user = require('./models/user.js');
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use(bodyParse.urlencoded({extended:true}));
-app.use(bodyParse.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
-userRouter = require('./Routes/userRoutes')(User);
-groupRouter = require('./Routes/groupRoutes')(Group);
+// userRoutes = 
+require('../routes/userRoutes')(app);
+groupRoutes = require('./routes/groupRoutes')(Group);
 
 
 app.use('/api/User/signup',userRoutes); 

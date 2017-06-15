@@ -6,19 +6,7 @@ module.exports = (app) => {
   }));
 
   app.post('/api/user/signup', userController.create);
-  app.get('/api/user/signin', userController.findOne);
+  app.get('/api/user/signin', userController.findUsers);
   
-}
-
-
-    userRouter.route('/user/signup')
-        .post(function (req, res){
-            
-
-    userRouter.route('/user/signin')
-
-        .get(function (req,res){
-
-
 }
 
