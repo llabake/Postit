@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "girl",
+    "database": "Postit",
+    "host": "127.0.0.1",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "girl",
+    "database": "Postit",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "happy",
+    "database": "Postit",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

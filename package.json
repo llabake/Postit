@@ -1,0 +1,36 @@
+{
+  "name": "post_it",
+  "version": "1.0.0",
+  "description": "Bootcamp/LOS 23 PROJECT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llabake/Postit.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/llabake/Postit/issues"
+  },
+  "homepage": "https://github.com/llabake/Postit#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "eslint": "^4.0.0",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "morgan": "^1.8.2",
+    "pg": "^6.2.4",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.1.0",
+    "sequelize-cli": "^2.7.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0"
+  }
+}
