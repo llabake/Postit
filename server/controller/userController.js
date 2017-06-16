@@ -2,12 +2,12 @@ const express = require('express');
 
 // const routes = function () {
 // //   const userRouter = express.Router();
-const User = require('../models/user').User;
+const User = require('../models/user')();
 
 
 
 
-  module.exports ={
+  module.exports = {
     create(req, res) {
       if(!req.body.username ){
         res.json({message:"username is required"})
@@ -29,10 +29,12 @@ const User = require('../models/user').User;
       }
       else
       {
+        console.log(User)
         User.create({
           username: req.body.username,
           email: req.body.email,
           password: req.body.password
+
         })
         .then(res.status(201).send("Your account has been created"))
         .catch(error => res.status(400).send(error));

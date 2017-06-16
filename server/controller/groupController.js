@@ -32,19 +32,20 @@ module.exports = {
   }
 
   },
-  .put(function(req,res){
-    User.findById(req.param.userid, function (err, user) {
-      if (err)
+
+  User.findById(req.param.userid, function (err, user) {
+    if (err)
       {
         res.status(500).send(err);
       }
-      else{
-        req.user.username = req.body.username;
-        user.save();
-        res.json(user)
+    else{
+      req.user.username = req.body.username;
+      user.save();
+      res.json(user)
       }
-    });
   })
+  );
+  
 
 
 
@@ -65,20 +66,7 @@ userRouter.route('/')
          }    
         });
   });
-  //middleware
-groupRouter.use('/:groupid',function(res,req,next){
-  if(err){
-    res.status(500).send(err);
-  }
-  else if (group){
-    req.group = group;
-    next();
-  }
-    else
-  {
-    res.status(404).send('not found')
-  }
-})
+
 groupRouter.route('/:groupid')
   .get(function (req, res) {
     res.json(req.group);
