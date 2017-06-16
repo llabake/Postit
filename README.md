@@ -20,9 +20,8 @@ create necessary tables in the database.
 sequelize db migrate to apply changes in the table.
 
 
-Functionality, Endpoints and Accessiblity
-
-Functionality	Endpoint	
+Functionality and Endpoints
+	
 Logs a user in	POST /api/user	
 Register a  new user	POST /api/user/signup 	
 Create a new group 	POST /api/group/	
