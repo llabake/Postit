@@ -8,7 +8,7 @@ This is a Node JS project for aspiring developers in Andela. The application is 
 
 Installation
 
-Clone the repo git clone and navigate to the project root directory
+Clone the repo git clone https://github.com/llabake/Postit.git and navigate to the project root directory
 
 Install depndencies 
 
