@@ -6,7 +6,7 @@ module.exports = (app) => {
   }));
 
   app.post('/api/user/signup', userController.create);
-  // app.get('/api/user/signin', userController.findUser);
+  app.get('/api/user/signin', userController.findUser);
   
 }
 
