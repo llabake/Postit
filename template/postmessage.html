@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+   <head>
     <meta charset="utf-8">
     <title> Learning | Happygirl  </title>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
 
 <body>
     <header>
         <a href="index.html" id="logo">
-            <h1> Post It</h1>
+            <h1> Post it </h1>
         </a>
         <nav>
             <ul>
-                <li><a href="login.html">Sign Up/Login</a></li>
-                <li><a href="creategroup.html">Create
+                <li><a href="signup.html"  class="selected">Sign Up</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="creategroup.html" >Create
                 Group</a></li>
-                <li><a href="postmessage.html" class="selected">Post message</a></li>
+                <li><a href="postmessage.html">Post message</a></li>
                 <li><a href="messageboard.html">Message Board</a></li>
-            </ul>
+                
+           </ul>
         </nav>
     </header>
-    <div>
-
-       <section>
+    <div id = "wrapper">
+        <section >
+            <img src="images/5a2701f7fa3945512566a0d44120e625.jpg" alt="Profile picture of Labake" class="profile-photo"  >
+            <h3>  General Information
+            </h3>
+            <p> Welcome to this environment, if you have been in need of a great communication tool, ensure to browse through and sign up</p>
+        </section>
+    </div>
+        <section>
             <form action="index.html" method="post" name="SignupDetail">
                 <fieldset>
                 <label for="postmessage">  Group Name:</label>
@@ -36,12 +43,16 @@
 
                <input type="submit" value="Post">
                 </fieldset>
-
-
            </form>
         </section>
+    <footer>
+        <a href="http://twitter.com/1abake"><img src="images/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/labakelemboye"><img src="images/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        
+        <p> &copy;  2017 HappygirlO1. </p>
+    </footer>
 
-   </div>
+
 </body>
-
 </html>
+

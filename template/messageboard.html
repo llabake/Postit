@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+   <head>
     <meta charset="utf-8">
     <title> Learning | Happygirl  </title>
-    
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
 
 <body>
     <header>
         <a href="index.html" id="logo">
-            <h1> Post It </h1>
+            <h1> Post it </h1>
         </a>
         <nav>
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="creategroup.html">Create
+                <li><a href="signup.html"  class="selected">Sign Up</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="creategroup.html" >Create
                 Group</a></li>
                 <li><a href="postmessage.html">Post message</a></li>
-                <li><a href="messageboard.html" class="selected">Message Board</a></li>
-            </ul>
+                <li><a href="messageboard.html">Message Board</a></li>
+                
+           </ul>
         </nav>
     </header>
-    <div>
-
+    <div id = "wrapper">
+        <section >
+            <img src="images/5a2701f7fa3945512566a0d44120e625.jpg" alt="Profile picture of Labake" class="profile-photo"  >
+            <h3>  General Information
+            </h3>
+            <p> Welcome to this environment, sign into your account to get started.</p>
+        </section>
+    </div>
       <section>
             <form action="index.html" method="post" name="SignupDetail">
                     <label for="groupname">Group</label>
@@ -35,49 +42,32 @@
                     <option  > Group three </option>
                     <option > Group four  </option>
                     </select><br>
-                
-
-
           </form>
             
       </section>
-
-  </div>
-    
- 
-   <div>
+    <div> 
+        <section>
+            <p>
+                Your  first message in this group is all about Nigeria.
+            </p>
         
-    
-    
-  </div>
-    
-      <div>
-    <form>
-          <input>
-
-                    <textarea rows="15" cols="20"> Your Message........ </textarea><br>
-
-                    <input type="submit" value="Read More">
-                    <textarea rows="15" cols="20"> Your Message........ </textarea><br>
-
-                    <input type="submit" value="Read More">
-                    <textarea rows="15" cols="20"> Your Message........ </textarea>
-
-                    <input type="submit" value="Read More">
+        </section>
+    </div>
+        <div> 
+        <section>
+            <p>
+                Your  here is about ownership.
+            </p>
         
-          </form>
-    
-  </div>
-        <div>
+        </section>
+    </div>
+    <footer>
+        <a href="http://twitter.com/1abake"><img src="images/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://facebook.com/labakelemboye"><img src="images/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
         
-      <p> message 3 </p>
-    
-  </div>
-        <div>
-        
-      <p> message 4 </p>
-    
-  </div>
+        <p> &copy;  2017 HappygirlO1. </p>
+    </footer>
+
+
 </body>
-
 </html>

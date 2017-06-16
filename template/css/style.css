@@ -1,7 +1,43 @@
+
+/*********************
+general
+**********************/
+
+
 a {
     text-decoration: none;
 }
 
+body {
+    font-family: inherit;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+h3 {
+    margin: 0 0 1em 0;
+    
+}
+
+#wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+
+/*********************
+heading
+**********************/
+
+#logo {
+    text-align: center;
+    margin: 0;
+    
+}
 h1 {
     font-family: sans-serif;
     margin: 15px 0;
@@ -16,6 +52,9 @@ h2 {
     font-weight: normal;
 }
 
+/*********************
+navigation
+**********************/
 
 nav {
     text-align: center;
@@ -38,12 +77,43 @@ nav a {
     padding: 15px 10px;
 }
 
+/*********************
+footer
+**********************/
 
-div {
-    text-align: left;
-    font-size: 25px;
-    color: aqua;
+footer {
+    text-align: center;
+    clear: both;
+    padding-top: 50px;
+    font-size: 0.75em;
+    color: #ccc;
 }
+
+.social-icon {
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    border-radius: 100%;
+    
+    
+}
+
+
+
+footer {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 0.75em;
+    color: #ccc;
+
+}
+
+
+    
+
+/*********************
+page about
+**********************/
 
 .profile-photo {
     display: block;
@@ -54,30 +124,42 @@ div {
 
 
 
+/*********************
+color
+**********************/
+
+/* link */
 a {
     color: #6ab47b;
 }
-
+/* green header*/
 header {
     background:  #6ab47b;
     border: #599a68;
 }
 
+/* logo text */
+h1, h2 {
+    color: #fff;
+}
+/* nav background on mobile */
 nav {
     background:#599a68; }
 
-
+/* nav link */
 nav a, nav a:visited {
     color: #fff;
 }
 
-
+/* selected nav link */
 nav a.selected, nav a:hover {
     color: #32673f;
 }
 
-
+/* site body */
 body {
     background-color: #fff; 
     color: #999;
 }
+
+
